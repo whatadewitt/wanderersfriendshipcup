@@ -1,0 +1,472 @@
+html {
+  font-size: 62.5%;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.6rem;
+}
+
+#menu-toggle {
+  background: rgba(255, 255, 255, 0.4);
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+}
+
+@media screen and (min-width: 768px) {
+  #menu-toggle {
+    display: none;
+  }
+}
+
+#menu-toggle .bar {
+  height: 0.5rem;
+  background: black;
+}
+
+#menu-toggle > div {
+  padding: 1rem 0.5rem;
+  width: 3.5rem;
+  height: 2.5rem;
+}
+
+.menu-open #hamburger {
+  display: none;
+}
+
+#hamburger .bar + .bar {
+  margin-top: 0.5rem;
+}
+
+#close-menu {
+  position: relative;
+  display: none;
+}
+
+.menu-open #close-menu {
+  display: block;
+}
+
+#close-menu .bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 75%;
+}
+
+#close-menu .bar:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+header {
+  background: rgba(0, 0, 0, 0.75);
+  font-weight: bold;
+  position: fixed;
+  z-index: 100;
+  padding: 6rem 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  transform: translateX(-100%);
+  transition: 0.5s ease-out transform;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-open header {
+    transform: translateX(0);
+  }
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+}
+
+header a + a {
+  margin-top: 1.5rem;
+}
+
+header a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  header {
+    right: 0;
+    bottom: auto;
+    z-index: 100;
+    padding: 20px;
+    flex-direction: row;
+    justify-content: flex-end;
+    transform: translateX(0);
+    transition: none;
+  }
+
+  header a + a {
+    margin: 0 0 0 1.5rem;
+  }
+}
+
+.section {
+  padding: 4rem;
+}
+
+h1 {
+  font-family: "Montserrat", "Arial Black", sans-serif;
+  font-weight: 900;
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 5.2rem;
+    letter-spacing: 0.2rem;
+  }
+}
+
+h2 {
+  font-family: "Montserrat", "Arial Black", sans-serif;
+  font-weight: 900;
+  font-size: 3.6rem;
+}
+
+h3 {
+  font-family: "Montserrat", "Arial Black", sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#hero {
+  background: url("header.jpg") no-repeat center;
+  background-size: cover;
+  height: 60vh;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#hero:before {
+  background: rgba(0, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.hero__copy {
+  color: white;
+  padding: 2rem;
+  position: absolute;
+  text-align: center;
+}
+
+.hero__subtitle {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero__subtitle {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.disc {
+  background: transparent;
+  border-radius: 50%;
+  height: 0.6rem;
+  width: 0.6rem;
+}
+
+@media (min-width: 768px) {
+  .disc {
+    background: white;
+  }
+}
+
+.hero__subtitle > div {
+  font-size: 1.6rem;
+}
+
+#sponsors h2 {
+  text-align: center;
+}
+
+.-green {
+  background: #a9b68f;
+  color: white;
+}
+
+#registration a {
+  color: white;
+}
+
+#registration .section__photo {
+  background-image: url("IMG_0718.jpg");
+}
+
+#partnership-start .section__photo {
+  background-image: url("theg1.jpg");
+}
+
+#partnership-two .section__photo {
+  background-image: url("teampurple.jpg");
+}
+
+.-split {
+  display: flex;
+  flex-direction: column;
+}
+
+.-split .section__copy {
+  padding: 4rem;
+  order: 0;
+}
+
+.-split .section__photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 40rem;
+  order: 1;
+}
+
+.-split {
+  padding: 0;
+}
+
+.-split .section__map {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .-split {
+    flex-direction: row;
+  }
+
+  .-split .section__map {
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .-split .section__map iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .-split .section__copy {
+    min-height: 40rem;
+    order: initial;
+  }
+
+  .-split > div {
+    flex-basis: 50%;
+  }
+
+  .-split .section__photo {
+    order: initial;
+  }
+}
+
+footer {
+  background: #575c3c;
+  color: white;
+  padding: 4rem 3rem;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .copyright {
+    text-align: right;
+  }
+}
+
+.sponsor {
+  text-align: center;
+  margin: 0 auto 5rem;
+  width: 70%;
+}
+
+.sponsor.-featured {
+  width: 90%;
+}
+
+.-featured + .-featured {
+  margin-bottom: 9rem;
+}
+
+@media (min-width: 768px) {
+  .sponsor__list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 6rem auto 0;
+  }
+
+  .sponsor {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    flex: 0 0 26%;
+    margin: auto;
+    padding: 1.5rem 0;
+  }
+
+  .sponsor.-featured {
+    width: auto;
+    flex-basis: 40%;
+  }
+
+  .-featured + .-featured {
+    margin-bottom: 0;
+  }
+}
+
+.sponsor img {
+  width: 100%;
+  height: auto;
+}
+
+.section__copy h2 {
+  margin-top: 0;
+}
+
+#our-story .section__copy {
+  margin: 0 25% 0 15%;
+  width: 60%;
+}
+
+#dev-group .section__copy {
+  margin: 0 15% 0 25%;
+  width: 60%;
+}
+
+#dev-group h2 {
+  margin-bottom: 0;
+}
+
+#dev-group h3 {
+  margin-top: 0;
+}
+
+.-blue {
+  background: #5e94a7;
+  color: white;
+}
+
+.-blue a,
+.-green a {
+  color: white;
+}
+
+.-blue a:hover,
+.-green a:hover {
+  text-decoration: underline;
+}
+
+.-quote {
+  padding: 6rem inherit;
+}
+
+.-quote .section__copy {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.quote__text {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+
+.quote__attribute {
+  text-align: right;
+}
+
+@media (min-width: 768px) {
+  #partnership-continued .section__copy {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  #update-2019 .section__copy {
+    width: 60%;
+    margin-left: 10%;
+  }
+
+  #health-education .section__copy {
+    width: 60%;
+    margin-left: 30%;
+  }
+}
+
+.footer__social {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.footer__social-links {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.footer__social-link {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .footer__social-links {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+}
+
+.footer__social-links a {
+  color: white;
+  font-size: 1.6rem;
+}
